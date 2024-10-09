@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# kaptain_logistic
+Project for INCS 870 By team Kaptain Omega
+>>>>>>> 80cb4182e6e8ea1868f61b5146fd4ef4275ea06b
