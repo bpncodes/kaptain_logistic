@@ -1,6 +1,16 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
 
+  controller do
+    before_action :authenticate_admin_user!
+
+    # def index
+      # authorize AdminUser # Ensure user has permission
+    # end
+
+  end
+
+
   index do
     selectable_column
     id_column
@@ -8,6 +18,7 @@ ActiveAdmin.register AdminUser do
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
+    column :role
     actions
   end
 
@@ -21,6 +32,7 @@ ActiveAdmin.register AdminUser do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :role
     end
     f.actions
   end

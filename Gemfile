@@ -70,3 +70,9 @@ end
 gem 'activeadmin'
 gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'sassc'
+
+gem 'pry'
+gem 'pry-rails' # provides Rails-specific enhancements
+gem 'pry-byebug' # for step debugging
+
+gem 'pundit'
