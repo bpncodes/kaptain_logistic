@@ -14,6 +14,19 @@ class AdminUser < ApplicationRecord
     ["created_at", "email", "encrypted_password", "id", "id_value", "remember_created_at", "reset_password_sent_at", "reset_password_token", "updated_at"]
   end
 
+  def admin?
+    role == "admin"
+  end
+
+  def manager?
+    role == "manager"
+  end
+
+  def viewer?
+    role == "viewer" 
+  end
+
+
   private
 
   def set_default_role

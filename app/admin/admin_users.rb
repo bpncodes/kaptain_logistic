@@ -1,6 +1,16 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
 
+  controller do
+    before_action :authenticate_admin_user!
+
+    # def index
+      # authorize AdminUser # Ensure user has permission
+    # end
+
+  end
+
+
   index do
     selectable_column
     id_column

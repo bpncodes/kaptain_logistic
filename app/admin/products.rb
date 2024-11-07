@@ -7,9 +7,8 @@ ActiveAdmin.register Product do
   def self.ransackable_attributes(auth_object = nil)
     %w[name description quantity_in_stock weight dimensions category price supplier]
   end
-end
+  end
 
-  
   index do
     selectable_column
     id_column
