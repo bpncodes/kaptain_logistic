@@ -76,3 +76,5 @@ gem 'pry-rails' # provides Rails-specific enhancements
 gem 'pry-byebug' # for step debugging
 
 gem 'pundit'
+
+gem 'faker', group: [:development, :test]

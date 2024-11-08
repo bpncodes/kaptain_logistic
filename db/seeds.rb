@@ -8,14 +8,23 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 # db/seeds.rb
+# Ensure Faker is available
 
-# Create Admin Users
-AdminUser.create!(email: 'admin1@example.com', password: 'password', role: 'admin')
-AdminUser.create!(email: 'editor1@example.com', password: 'password', role: 'editor')
-AdminUser.create!(email: 'viewer1@example.com', password: 'password', role: 'viewer')
-AdminUser.create!(email: 'asdfasdf@asdf.asdf', password: 'asdfasdf', role: 'admin')
+require 'faker'
 
-puts "Admin users created."
+# Create 10 AdminUsers with fake data
+10.times do
+  AdminUser.create!(
+    email: Faker::Internet.email,
+    password: 'asdfasdf', # use a default password (can be changed later)
+    role: [:admin, :editor, :viewer].sample,  # Randomly assign a role
+    phone_number: Faker::PhoneNumber.cell_phone_in_e164, # Generate a fake phone number
+    otp_code: Faker::Alphanumeric.alpha(number: 6), # Random 6-character OTP code
+    otp_generated_at: Faker::Time.backward(days: 30) # Random OTP generation time
+  )
+end
+
+puts "10 AdminUsers created with fake data"
 
 # Create Products
 products = [
