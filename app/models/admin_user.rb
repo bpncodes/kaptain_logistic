@@ -38,10 +38,9 @@ class AdminUser < ApplicationRecord
   end
 
   def send_otp
-    # Integrate with SMS or email sending service here
-    # Example: TwilioClient.send_message(phone_number, "Your OTP is #{otp_code}")
+    Rails.logger.info("SMS to #{self.phone_number}: #{self.otp_code}")
+    VonageSmsService.new(self.phone_number, self.otp_code).send_sms
   end
-
 
 
   private

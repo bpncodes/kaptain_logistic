@@ -78,3 +78,6 @@ gem 'pry-byebug' # for step debugging
 gem 'pundit'
 
 gem 'faker', group: [:development, :test]
+
+gem 'vonage', '~> 7.28'
+gem 'dotenv-rails', groups: [:development, :test]
