@@ -15,3 +15,112 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+/* Centering the entire login form */
+.login-box {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header styling */
+h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Field styling */
+.field {
+  margin-bottom: 20px;
+  text-align: left; /* Keeps labels and inputs aligned */
+}
+
+.field label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.field input[type="email"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+/* Remember Me styling */
+.field.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.field.remember-me input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.2);
+  accent-color: #4CAF50; /* Adjusts checkbox color in modern browsers */
+}
+
+/* Submit button styling */
+.actions input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Flash messages styling */
+.flash {
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 6px;
+  color: #fff;
+  text-align: center;
+  max-width: 400px;
+  font-size: 14px;
+}
+
+.flash.alert {
+  background-color: #e74c3c;
+}
+
+.flash.notice {
+  background-color: #4CAF50;
+}
+
+.flash {
+  animation: fadeIn 0.3s ease-out, fadeOut 0.3s ease-in 4s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}

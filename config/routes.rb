@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
-  resources :products
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Devise configuration for admin users within ActiveAdmin
+  devise_for :admin_users, ActiveAdmin::Devise.config.merge({ controllers: { sessions: 'admin_users/sessions' } })
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # ActiveAdmin routes
+  ActiveAdmin.routes(self)
+
+  # Wrap custom OTP routes in devise_scope for admin_users
+  devise_scope :admin_user do
+    get "verify_otp" => "admin_users/sessions#verify_otp"
+    post "verify_otp_code" => "admin_users/sessions#verify_otp_code"
+  end
+
+
+  # Other resource routes
+  resources :products
+
+  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
+  # Root route (customize as needed)
   # root "posts#index"
 end
