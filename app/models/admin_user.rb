@@ -28,7 +28,8 @@ class AdminUser < ApplicationRecord
 
 
   def generate_otp!
-    self.otp_code = rand(100000..999999).to_s  # Generate a random 6-digit OTP
+    # Generates a SHA-256 hash of the current time (as a string) and returns the first 11 characters.
+    self.otp_code = Digest::SHA256.hexdigest(Time.now.to_s)[0..10]  # Generate a random OTP
     self.otp_generated_at = Time.current
     save!
   end
