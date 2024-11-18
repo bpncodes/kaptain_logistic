@@ -1,6 +1,14 @@
 ActiveAdmin.register Product do
   permit_params :name, :description, :quantity_in_stock, :weight, :dimensions, :category, :price, :supplier
 
+  before_action :authorize_product
+
+  controller do
+    def authorize_product
+      authorize Product  # This uses Pundit to check the permissions
+    end
+  end
+
   class Product < ApplicationRecord
   # Other model code...
 
