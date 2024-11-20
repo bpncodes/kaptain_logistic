@@ -33,7 +33,7 @@ div class: "row" do
   div class: "col" do
     panel "Prateeksha - Gap Analysis File" do
       para do
-        link_to "This is the link to Gap Analysis file", "https://www.google.com", target: "_blank"
+        link_to "This is the link to Gap Analysis file", "https://docs.google.com/spreadsheets/d/15Ny3oC-oq4gpbnEc2Ayn8wHd18Orlkn4/edit?usp=drive_link&ouid=107716587175461103562&rtpof=true&sd=true", target: "_blank"
       end
     end
   end
@@ -43,7 +43,7 @@ div class: "row" do
   div class: "col" do
     panel "Danni - NIDS Google Collab demo" do
       para do
-        link_to "This is the link to NIDS Google Collab demo", "https://www.google.com", target: "_blank"
+        link_to "This is the link to NIDS Google Collab demo", "https://colab.research.google.com/drive/1uvEZtEMeQHdHGQOt9fdPLCgVGBxTSzz0?usp=sharing", target: "_blank"
       end
     end
   end
@@ -53,7 +53,7 @@ div class: "row" do
   div class: "col" do
     panel "Bipin - Wordpress Analyais for Quote control" do
       para do
-        link_to "This is the link to WordPress Analysis for Quote control", "https://www.google.com", target: "_blank"
+        link_to "This is the link to WordPress Analysis for Quote control", "https://docs.google.com/document/d/1UXFdwhoocwuQ8zg-rVT3XTnybQeZ7rh085P-i1zA9F8/edit?tab=t.0#heading=h.k0cuwe5k5qcl", target: "_blank"
       end
     end
   end
